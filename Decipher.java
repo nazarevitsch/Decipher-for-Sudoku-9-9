@@ -96,10 +96,14 @@ public class Decipher {
             if (NumberAssumption >= 2 && NumberAssumption <= 9 && !EnterInCompare) {
                 for (int i = 0; i < NumberAssumption; i++) {
                     if (i == 0) {
-                                checkPoint = Arrays.copyOf(arr, arr.length);
+                        for(int s = 0; s < 9; s++) {
+                            checkPoint[s] = Arrays.copyOf(arr[s], arr[s].length);
+                        }
                     }
                     if (i != 0) {
-                                arr = Arrays.copyOf(checkPoint, checkPoint.length);
+                        for(int s = 0; s < 9; s++) {
+                            arr[s] = Arrays.copyOf(checkPoint[s], checkPoint[s].length);
+                        }
                     }
                     arr[I][L] = (Index[i]);
                     decipherAssumption();
